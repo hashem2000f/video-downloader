@@ -1,0 +1,352 @@
+/* تصميم عام */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --danger-color: #e74c3c;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
+    --success-color: #2ecc71;
+}
+
+body {
+    background: linear-gradient(135deg, #00416a, #e4e5e6);
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+/* تصميم البطاقات */
+.glass-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* تصميم العناوين */
+.page-title {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    color: var(--dark-color);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.card-title:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    bottom: -10px;
+    right: 0;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 4px;
+}
+
+/* تصميم الأزرار */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 10px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* تصميم حقول الإدخال */
+.form-control {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+    border-color: var(--primary-color);
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+/* أيقونات المنصات */
+.platform-icon {
+    font-size: 2rem;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.youtube { color: #FF0000; }
+.facebook { color: #1877F2; }
+.instagram { color: #E4405F; }
+.tiktok { color: #000000; }
+
+/* مؤشر التحميل */
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* اختيار المنصات */
+.platform-select {
+    margin-bottom: 20px;
+}
+
+.platform-btn {
+    cursor: pointer;
+    padding: 15px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: white;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.platform-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.platform-btn.active {
+    background-color: #e8f4f8;
+    border: 2px solid var(--primary-color);
+}
+
+.platform-icon-large {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.platform-name {
+    font-weight: 600;
+}
+
+/* اختيار نوع الملف */
+.filetype-radio {
+    display: none;
+}
+
+.filetype-label {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.filetype-radio:checked + .filetype-label {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* شريط التقدم */
+.progress-container {
+    display: none;
+    margin-top: 30px;
+}
+
+.progress {
+    height: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+/* قسم المميزات */
+.features-section {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.feature-description {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* توست الإشعارات */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .card-title {
+        font-size: 1.5rem;
+    }
+    
+    .platform-btn {
+        margin-bottom: 15px;
+    }
+    
+    .filetype-label {
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .features-section .col-md-4 {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .glass-card {
+        padding: 20px;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
+}
+
+/* تحسين المظهر على الأجهزة اللوحية */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+/* تخصيص الألوان الداكنة للأجهزة التي تفضل الوضع الداكن */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    }
+    
+    .glass-card {
+        background-color: rgba(44, 62, 80, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .card-title, label {
+        color: #ecf0f1;
+    }
+    
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ecf0f1;
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .platform-btn, .feature-card {
+        background-color: rgba(44, 62, 80, 0.95);
+        color: #ecf0f1;
+    }
+    
+    .platform-btn.active {
+        background-color: rgba(52, 152, 219, 0.3);
+    }
+    
+    .filetype-label {
+        background-color: rgba(44, 62, 80, 0.95);
+        color: #ecf0f1;
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .feature-description {
+        color: #bdc3c7;
+    }
+}
